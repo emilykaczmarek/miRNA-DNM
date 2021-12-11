@@ -4,8 +4,7 @@ DNM-miRNA is an unsupervised representation learning-clustering application. Wit
 <a href="url"><img src="https://user-images.githubusercontent.com/52331761/145657730-36d68701-50c6-491b-870e-2af8af3668da.png" height="525" width="875" ></a>
 
 
-It is recommended to run DNM.ipynb in Google Colab. Otherwise, a full list of required packages and versions can be found in Google Colab by running the following command: !pip list –v. The code is built using Theano and the example 
-This code can be downloaded and imported into a Google Colab notebook. Running the first cell sets up the environment for the code, and the second contains the DNM class. The third cell trains the DNM, and cells 4, 5, and 6 are used for interpretation after training through heatmaps, labelled maps, and activation gradients, respectively.
+It is recommended to run DNM.ipynb in Google Colab. Otherwise, a full list of required packages and versions can be found in Google Colab by running the following command: !pip list –v. This code can be downloaded and imported into a Google Colab notebook. Running the first cell sets up the environment for the code, and the second contains the DNM class. The third cell trains the DNM, and cells 4, 5, and 6 are used for interpretation after training through heatmaps, labelled maps, and activation gradients, respectively.
 
 An example dataset is imported and used in the demo code from sklearn (breast cancer data), however any dataset can be imported into Colab and used with the DNM. Data should be formatted with samples (e.g., patients) as rows and features (e.g., miRNAs) as columns. 
 
