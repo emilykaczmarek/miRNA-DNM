@@ -27,8 +27,8 @@ The inputs for the DNM initialization are as follows:
 These variables can be tuned for specific applications to achieve optimal performance. The main tuning we recommend is the latent_size and lattice_size. To initialize the DNM, the following can be run: 
 
 *deep_map = DNM(input_image_size= len(X_train[0]),
-                        latent_size= latent_size,
-                        lattice_size= lattice_size,
+                        latent_size= 4,
+                        lattice_size= (18,18),
                         ae_arch_class= miRNA_AE, 
                         name='miRNA_test',
                         init_params=None, 
