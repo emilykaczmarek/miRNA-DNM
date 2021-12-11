@@ -56,13 +56,14 @@ Next, the heatmap can be created using the function
 
 compute_scaled_kde_neoplastic(lattice_size, np.array(locs))
 
-![heatmap-2](https://user-images.githubusercontent.com/52331761/145660097-b1885ba4-d453-42d5-b73e-143633586149.png)
+<a href="url"><img src="https://user-images.githubusercontent.com/52331761/145660097-b1885ba4-d453-42d5-b73e-143633586149.png" height="300" width="300" ></a>
 
 
 If a subset of the data is labelled, this can be visualized using labelled_plot, where the following plot is outputted:
 labelled_plot(lattice_size, locs, y_train, cols)
 
-![label_plot](https://user-images.githubusercontent.com/52331761/145660108-cafc9b72-e04a-4564-b719-90278af55146.png)
+<a href="url"><img src="https://user-images.githubusercontent.com/52331761/145660108-cafc9b72-e04a-4564-b719-90278af55146.png" height="300" width="300" ></a>
+
 
 
 Lastly, the most informative features found by the autoencoder of the DNM can be extracted using the function feat_vis(X_train)
