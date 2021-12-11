@@ -1,7 +1,7 @@
 Application of Deep Neural Maps (Pesteie et al., 2018) for microRNA-based cancer clustering and interpretation. Original code and paper can be found at https://github.com/mpslxz/DNM. The code has been modified for application to miRNA sequence data, the autoencoder architecture for 1D data (miRNA_AE) is updated and activation gradients are added (second cell of the DNM.ipynb file). This code has been converted to a notebook (.ipynb) from the original python file.
 DNM-miRNA is an unsupervised representation learning-clustering application. With this method, high dimensional data can be reduced into lower dimensional latent features using an Autoencoder (AE), which are subsequently clustered using a Self-Organizing Map (SOM). Joint fine-tuning of the two methods tailors the latent space specifically for more accurate clustering. Following training, the SOM can be visualized and used for classification, interpretation of clusters, and analysis of individual samples/abnormal sample features through activation gradients.
 
-<a href="url"><img src="https://user-images.githubusercontent.com/52331761/145657730-36d68701-50c6-491b-870e-2af8af3668da.png" height="250" width="250" ></a>
+<a href="url"><img src="https://user-images.githubusercontent.com/52331761/145657730-36d68701-50c6-491b-870e-2af8af3668da.png" height="1000" width="1250" ></a>
 
 
 It is recommended to run DNM.ipynb in Google Colab. Otherwise, a full list of required packages and versions can be found in Google Colab by running the following command: !pip list –v. The code is built using Theano and the example 
