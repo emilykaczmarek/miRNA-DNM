@@ -47,9 +47,7 @@ After initialization, training is implemented using:
 *deep_map.train(x_train=X_train.astype('float32'), dnm_epochs=1500, trial_name='test', name='test', location_name=None,pre_train_epochs=[2500, 1500])*
 
 
-Following training, there are multiple ways of interpreting the DNM. First, a heatmap can be created to determine where the highest density of samples were mapped. This is an unsupervised, unlabeled way of determining clusters of data. First, locations of data should be acquired using the following command: 
-
-*locs = deep_map.get_locations(X_train.astype('float32'))*
+Following training, there are multiple ways of interpreting the DNM. First, a heatmap can be created to determine where the highest density of samples were mapped. This is an unsupervised, unlabeled way of determining clusters of data. First, locations of data should be acquired using the following command: *locs = deep_map.get_locations(X_train.astype('float32'))*
 
 Next, the heatmap can be created using the function: 
 *compute_scaled_kde_neoplastic(lattice_size, np.array(locs))*
