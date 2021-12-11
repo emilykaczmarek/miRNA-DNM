@@ -11,19 +11,19 @@ An example dataset is imported and used in the demo code from sklearn (breast ca
 
 The inputs for the DNM initialization are as follows:
 
-input_image_size: feature dimensionality of input data<br/>
-latent_size: size of smallest autoencoder layer (features reduced to this dimensionality)<br/>
-lattice_size: dimensions of the SOM<br/>
-ae_arch_class: autoencoder architecture to use (can design autoencoders for specific data types)<br/>
-name: name of trial being run<br/>
-init_params: weight initialization<br/>
-sigma: parameter for Gaussian neighborhood function<br/>
-alpha: parameter for weight updates <br/>
-BATCH_SIZE: number of samples inputted before updating the network parameters<br/>
-ae_lr: learning rate for training autoencoder<br/>
-lmbd: parameter of the autoencoder update<br/>
-som_pretrain_lr: learning rate for training self-organizing map<br/>
-dnm_map_lr: learning rate for joint fine-tuning of autoencoder and self-organizing map<br/>
+- input_image_size: feature dimensionality of input data<br/>
+- latent_size: size of smallest autoencoder layer (features reduced to this dimensionality)<br/>
+- lattice_size: dimensions of the SOM<br/>
+- ae_arch_class: autoencoder architecture to use (can design autoencoders for specific data types)<br/>
+- name: name of trial being run<br/>
+- init_params: weight initialization<br/>
+- sigma: parameter for Gaussian neighborhood function<br/>
+- alpha: parameter for weight updates <br/>
+- BATCH_SIZE: number of samples inputted before updating the network parameters<br/>
+- ae_lr: learning rate for training autoencoder<br/>
+- lmbd: parameter of the autoencoder update<br/>
+- som_pretrain_lr: learning rate for training self-organizing map<br/>
+- dnm_map_lr: learning rate for joint fine-tuning of autoencoder and self-organizing map<br/>
 
 These variables can be tuned for specific applications to achieve optimal performance. The main tuning we recommend is the latent_size and lattice_size. To initialize the DNM, the following can be run: 
 
