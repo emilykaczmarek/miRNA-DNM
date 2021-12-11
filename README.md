@@ -59,6 +59,6 @@ If a subset of the data is labelled, this can be visualized using labelled_plot,
 
 <a href="url"><img src="https://user-images.githubusercontent.com/52331761/145660108-cafc9b72-e04a-4564-b719-90278af55146.png" height="300" width="300" ></a>
 
-Lastly, the most informative features found by the autoencoder of the DNM can be extracted using the function feat_vis(X_train)
+Lastly, the most informative features found by the autoencoder of the DNM can be extracted using the function *feat_vis(X_train)*
 Individual samples can be used as input to the function to find features corresponding to specific samples, or can be grouped to find features of classes/all data points. 
 
