@@ -44,9 +44,7 @@ These variables can be tuned for specific applications to achieve optimal perfor
 
 After initialization, training is implemented using: 
 
-*deep_map.train(x_train=X_train.astype('float32'),  
-                                dnm_epochs=1500, trial_name='test', name='test', location_name=None,
-                                pre_train_epochs=[2500, 1500])*
+*deep_map.train(x_train=X_train.astype('float32'), dnm_epochs=1500, trial_name='test', name='test', location_name=None,pre_train_epochs=[2500, 1500])*
 
 
 Following training, there are multiple ways of interpreting the DNM. First, a heatmap can be created to determine where the highest density of samples were mapped. This is an unsupervised, unlabeled way of determining clusters of data. First, locations of data should be acquired using the following command: 
@@ -59,12 +57,9 @@ Next, the heatmap can be created using the function:
 <a href="url"><img src="https://user-images.githubusercontent.com/52331761/145660097-b1885ba4-d453-42d5-b73e-143633586149.png" height="300" width="300" ></a>
 
 
-If a subset of the data is labelled, this can be visualized using labelled_plot, where the following plot is outputted:
-*labelled_plot(lattice_size, locs, y_train, cols)*
+If a subset of the data is labelled, this can be visualized using labelled_plot, where the following plot is outputted: *labelled_plot(lattice_size, locs, y_train, cols)*
 
 <a href="url"><img src="https://user-images.githubusercontent.com/52331761/145660108-cafc9b72-e04a-4564-b719-90278af55146.png" height="300" width="300" ></a>
-
-
 
 Lastly, the most informative features found by the autoencoder of the DNM can be extracted using the function feat_vis(X_train)
 Individual samples can be used as input to the function to find features corresponding to specific samples, or can be grouped to find features of classes/all data points. 
