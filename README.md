@@ -71,5 +71,5 @@ This plot shows the proportion of samples of each class mapped to the nodes of t
 Lastly, the most informative features found by the autoencoder of the DNM can be extracted using the function *feat_vis(X_train)*
 Individual samples can be used as input to the function to find features corresponding to specific samples, or can be grouped to find features of classes/all data points. 
 
-**Reference**
+**Reference**<br/>
 Kaczmarek, E. et al. Topology Preserving Stratification of Tissue Neoplasticity using Deep Neural Maps and microRNA Signatures. Under Review at BMC Bioinformatics.
