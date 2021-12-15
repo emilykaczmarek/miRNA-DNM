@@ -1,13 +1,20 @@
+**Overview**<br/>
 Application of Deep Neural Maps (Pesteie et al., 2018) for microRNA-based cancer clustering and interpretation. Original code and paper can be found at https://github.com/mpslxz/DNM. The code has been modified for application to miRNA sequence data, the autoencoder architecture for 1D data (miRNA_AE) is updated and activation gradients are added (second cell of the DNM.ipynb file). This code has been converted to a notebook (.ipynb) from the original python file.
 DNM-miRNA is an unsupervised representation learning-clustering application. With this method, high dimensional data can be reduced into lower dimensional latent features using an Autoencoder (AE), which are subsequently clustered using a Self-Organizing Map (SOM). Joint fine-tuning of the two methods tailors the latent space specifically for more accurate clustering. Following training, the SOM can be visualized and used for classification, interpretation of clusters, and analysis of individual samples/abnormal sample features through activation gradients.
 
 <a href="url"><img src="https://user-images.githubusercontent.com/52331761/145657730-36d68701-50c6-491b-870e-2af8af3668da.png" height="525" width="875" ></a>
+Adapted from "Topology Preserving Stratification of Tissue Neoplasticity using Deep Neural Maps and microRNA Signatures" (Under Review). Overview of DNM methodology.
 
+**Environment Setup**<br/>
+It is recommended to run DNM.ipynb in Google Colab. Otherwise, a full list of required packages and versions can be found in Google Colab by running the following command: !pip list –v. This code can be downloaded and imported into a Google Colab notebook. 
 
-It is recommended to run DNM.ipynb in Google Colab. Otherwise, a full list of required packages and versions can be found in Google Colab by running the following command: !pip list –v. This code can be downloaded and imported into a Google Colab notebook. Running the first cell sets up the environment for the code, and the second contains the DNM class. The third cell trains the DNM, and cells 4, 5, and 6 are used for interpretation after training through heatmaps, labelled maps, and activation gradients, respectively.
+**Brief Description of Cells**<br/>
+Running the first cell sets up the environment for the code, and the second contains the DNM class. The third cell trains the DNM, and cells 4, 5, and 6 are used for interpretation after training through heatmaps, labelled maps, and activation gradients, respectively.
 
-An example dataset is imported and used in the demo code from sklearn (breast cancer data), however any dataset can be imported into Colab and used with the DNM. Data should be formatted with samples (e.g., patients) as rows and features (e.g., miRNAs) as columns. 
+**Data**<br/>
+An example dataset is imported and used in the demo code from sklearn (breast cancer data - https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html. This data consists of 30 features for 569 samples, and has two classes. However any dataset can be imported into Colab and used with the DNM. Data should be formatted with samples (e.g., patients) as rows and features (e.g., miRNAs) as columns. 
 
+**Inputs**<br/>
 The inputs for the DNM initialization are as follows:
 
 - input_image_size: feature dimensionality of input data<br/>
@@ -24,8 +31,10 @@ The inputs for the DNM initialization are as follows:
 - som_pretrain_lr: learning rate for training self-organizing map<br/>
 - dnm_map_lr: learning rate for joint fine-tuning of autoencoder and self-organizing map<br/>
 
+**Hyperparameter Tuning**<br/>
 These variables can be tuned for specific applications to achieve optimal performance. The main tuning we recommend is the latent_size and lattice_size. To initialize the DNM, the following can be run: 
 
+**Initialization and Training**<br/>
 *deep_map = DNM(input_image_size= len(X_train[0]),
                         latent_size= 4,
                         lattice_size= (18,18),
@@ -45,19 +54,22 @@ After initialization, training is implemented using:
 
 *deep_map.train(x_train=X_train.astype('float32'), dnm_epochs=1500, trial_name='test', name='test', location_name=None,pre_train_epochs=[2500, 1500])*
 
-
+**DNM Interpretation and Visualization**<br/>
 Following training, there are multiple ways of interpreting the DNM. First, a heatmap can be created to determine where the highest density of samples were mapped. This is an unsupervised, unlabeled way of determining clusters of data. First, locations of data should be acquired using the following command: *locs = deep_map.get_locations(X_train.astype('float32'))*
 
 Next, the heatmap can be created using the function: 
 *compute_scaled_kde_neoplastic(lattice_size, np.array(locs))*
 
 <a href="url"><img src="https://user-images.githubusercontent.com/52331761/145660097-b1885ba4-d453-42d5-b73e-143633586149.png" height="300" width="300" ></a>
+This is a heatmap showing where the highest density of samples were mapped. The self-organizing map is an unsupervised clustering approach that maps similar samples to proximal locations on the 2D lattice. Overall, the image above shows two main clusters, with a couple smaller clusters nearby.
 
-
-If a subset of the data is labelled, this can be visualized using labelled_plot, where the following plot is outputted: *labelled_plot(lattice_size, locs, y_train, cols)*
+If the data does not contain labels, users should stop at the step above. However, if a subset of the data is labelled, this can be visualized using labelled_plot, where the following plot is outputted: *labelled_plot(lattice_size, locs, y_train, cols)*
 
 <a href="url"><img src="https://user-images.githubusercontent.com/52331761/145660108-cafc9b72-e04a-4564-b719-90278af55146.png" height="300" width="300" ></a>
+This plot shows the proportion of samples of each class mapped to the nodes of the lattice, and displays a clear separation of the two classes in the breast cancer dataset.
 
 Lastly, the most informative features found by the autoencoder of the DNM can be extracted using the function *feat_vis(X_train)*
 Individual samples can be used as input to the function to find features corresponding to specific samples, or can be grouped to find features of classes/all data points. 
 
+**Reference**
+Kaczmarek, E. et al. Topology Preserving Stratification of Tissue Neoplasticity using Deep Neural Maps and microRNA Signatures. Under Review at BMC Bioinformatics.
