@@ -61,12 +61,12 @@ Next, the heatmap can be created using the function:
 *compute_scaled_kde_neoplastic(lattice_size, np.array(locs))*
 
 <a href="url"><img src="https://user-images.githubusercontent.com/52331761/145660097-b1885ba4-d453-42d5-b73e-143633586149.png" height="300" width="300" ></a>
-This is a heatmap showing where the highest density of samples were mapped. The self-organizing map is an unsupervised clustering approach that maps similar samples to proximal locations on the 2D lattice. Overall, the image above shows two main clusters, with a couple smaller clusters nearby.
+<br/>The above image is a heatmap showing where the highest density of samples were mapped. The self-organizing map is an unsupervised clustering approach that maps similar samples to proximal locations on the 2D lattice. Overall, the image above shows two main clusters, with a couple smaller clusters nearby.
 
 If the data does not contain labels, users should stop at the step above. However, if a subset of the data is labelled, this can be visualized using labelled_plot, where the following plot is outputted: *labelled_plot(lattice_size, locs, y_train, cols)*
 
 <a href="url"><img src="https://user-images.githubusercontent.com/52331761/145660108-cafc9b72-e04a-4564-b719-90278af55146.png" height="300" width="300" ></a>
-This plot shows the proportion of samples of each class mapped to the nodes of the lattice, and displays a clear separation of the two classes in the breast cancer dataset.
+<br/> This plot above shows the proportion of samples of each class mapped to the nodes of the lattice, and displays a clear separation of the two classes in the breast cancer dataset.
 
 Lastly, the most informative features found by the autoencoder of the DNM can be extracted using the function *feat_vis(X_train)*
 Individual samples can be used as input to the function to find features corresponding to specific samples, or can be grouped to find features of classes/all data points. 
